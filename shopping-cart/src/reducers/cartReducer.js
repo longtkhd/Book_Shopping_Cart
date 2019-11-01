@@ -27,9 +27,12 @@ const cartReducer = (state = initState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
             let addedItem = state.items.find(x => x.id === action.id)
-                //Tìm những phần tử trong Items bên trên có id = action.id
-            let existed_item = state.addedItem.find(x => action.id === x.id)
+            console.log(addedItem);
+            //Tìm những phần tử trong Items bên trên có id = action.id
+            let existed_item = state.addedItems.find(x => action.id === x.id)
                 //kiểm tra action id có tồn tại trong additems không
+            console.log(existed_item);
+            //test
             if (existed_item) {
                 addedItem.quantity += 1
                 return {

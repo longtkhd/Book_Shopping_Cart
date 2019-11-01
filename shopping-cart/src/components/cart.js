@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class componentName extends Component {
+class Cart extends React.Component {
 
     render() {
         return (
-            <h1>this is card view</h1>
+            <h1 className ="mt-5">this is card view</h1>
         );
     }
 }
 
-export default componentName;
+export default Cart;
