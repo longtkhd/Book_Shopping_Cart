@@ -13,8 +13,15 @@ class Cart extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.desc}</p>
-                        <p><b>Price: {item.price}$</b></p>
-                        <span className="btn btn-primary" onClick={() => this.handleClick(item.id)}>Add</span>
+                        <p>
+                            <b>Quantity: {item.quantity}</b>
+                        </p>
+                        <p>
+                            <b>Total: {this.props.total} $</b>
+                            {/* lấy total từ state Items */}
+                        </p>
+                        
+                        
                     </div>
                 </div>
             )
@@ -34,7 +41,8 @@ class Cart extends React.Component {
 }
  const mapStateToProps = (state, ownProps) => {
     return {
-        items: state.addedItems
+        items: state.addedItems,
+        total : state.total
     }
 }
 
