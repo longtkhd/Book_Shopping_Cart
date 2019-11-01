@@ -10,7 +10,6 @@ function App() {
 return (
 <BrowserRouter>
 	<Navbar></Navbar>
-	
 		<Switch>
 			<Route exact path="/" component={Home} />
 			<Route path="/cart" component={Cart} />

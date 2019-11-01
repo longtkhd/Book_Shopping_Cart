@@ -26,10 +26,13 @@ class Home extends React.Component {
                     <img className="card-img-top" src={item.img} alt={item.title} />
                     <div className="card-body">
                         <h5 className="card-title">{item.title}</h5>
-                        <p className="card-text">{item.desc}</p>
+                        <p className="card-text">{item.author}</p>
                         <p><b>Price: {item.price}$</b></p>
-                        <span className="btn btn-primary" onClick = {()=>this.handleClick(item.id)}>Add</span>                       
+                       
+                      
                     </div>
+                    <button onClick={() => this.handleClick(item.id)} type="button" class="btn btn-danger"> <i class="fa fa-shopping-cart fa-2x">    </i> ADD ITEMS</button>
+
                 </div>
             )
         })

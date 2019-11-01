@@ -11,12 +11,12 @@ import Item6 from '../images/Item6.jpg'
 
 const initState = {
     items: [
-        { id: 1, title: 'Làm bạn với bầu trời', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 10, img: Item1 },
-        { id: 2, title: 'Adidas', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 10, img: Item2 },
-        { id: 3, title: 'Bạn đắt giá bao nhiêu', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 12, img: Item3 },
-        { id: 4, title: 'Cân bằng cảm xúc lúc giông bão', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 13, img: Item4 },
+        { id: 1, title: 'Làm bạn với bầu trời', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 10, img: Item1, author: "Nguyễn Nhật Ánh" },
+        { id: 2, title: '5 centimet trên giây', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 10, img: Item2, author: "Shinkai Makoto" },
+        { id: 3, title: 'Bạn đắt giá bao nhiêu', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 12, img: Item3, author: "Văn Tình" },
+        { id: 4, title: 'Cân bằng cảm xúc lúc giông bão', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 13, img: Item4, author: "Richard Nicholls" },
         { id: 5, title: 'Đừng lựa chọn an nhàn khi còn trẻ', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 10, img: Item5 },
-        { id: 6, title: 'Tuổi trẻ đáng giá bao nhiêu', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 15, img: Item6 },
+        { id: 6, title: 'Tuổi trẻ đáng giá bao nhiêu', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price: 15, img: Item6, author: "Rosie Nguyễn" },
 
     ],
     addedItems: [],
