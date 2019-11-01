@@ -28,7 +28,7 @@ class Home extends React.Component {
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.desc}</p>
                         <p><b>Price: {item.price}$</b></p>
-                        <a href="/" className="btn btn-primary" onClick = {()=>{this.handleClick(item.id)}}>Add</a>                       
+                        <a href="/" className="btn btn-primary" onClick = {()=>this.handleClick(item.id)}>Add</a>                       
                     </div>
                 </div>
             )
