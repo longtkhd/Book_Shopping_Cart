@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { addToCart} from '../actions/cartAction'
 
-const handleClick = (id) => {
-    this.props.addToCart(id)
-}
-class Home extends React.Component {
 
+class Home extends React.Component {
+    handleClick = (id) => {
+        this.props.addToCart(id);
+    }
     render() {
         let itemList = this.props.items.map(item => {
             return (
@@ -28,11 +28,9 @@ class Home extends React.Component {
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.desc}</p>
                         <p><b>Price: {item.price}$</b></p>
-                        <a href="/" className="btn btn-primary">Add</a>
-                       
+                        <a href="/" className="btn btn-primary" onClick = {()=>{this.handleClick(item.id)}}>Add</a>                       
                     </div>
                 </div>
-
             )
         })
         return (
@@ -46,6 +44,8 @@ class Home extends React.Component {
         
     }
 }
+
+
 const mapStateToProps = (state) => {
     return {
         items: state.items
