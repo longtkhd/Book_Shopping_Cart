@@ -27,11 +27,11 @@ const cartReducer = (state = initState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
             let addedItem = state.items.find(x => x.id === action.id)
-            console.log(addedItem);
+            console.log("add" , addedItem);
             //Tìm những phần tử trong Items bên trên có id = action.id
             let existed_item = state.addedItems.find(x => action.id === x.id)
                 //kiểm tra action id có tồn tại trong additems không
-            console.log(existed_item);
+            console.log("trùng" ,existed_item);
             //test
             if (existed_item) {
                 addedItem.quantity += 1
@@ -61,7 +61,34 @@ const cartReducer = (state = initState, action) => {
                 addItems: new_items,
                 total: newTotal
             }
+        case ADD_QUANTITY:
+            let add_item = state.items.find(x => x.id === action.id);         
 
+            add_item.quantity++;
+            console.log("add_item" , add_item.quantity)
+            return {
+                ...state,
+                total: state.total + add_item.price
+            }
+            //thêm số lượng
+        case SUB_QUANTITY:
+
+            let item_sub = state.items.find(x => action.id === x.id);
+            if(item_sub.quantity === 1){
+                let new_item = state.addedItems.filter(x => x.id !== action.id);  
+                // để lại những sách chưa xóa vào addedItems thôi           
+                return {
+                    ...state,
+                    addedItems:new_item,
+                    total: state.total - item_sub.price
+                }
+            }else {
+                item_sub.quantity --;
+                return {
+                    ...state,
+                    total: state.total -item_sub.price
+                }
+            }
         default:
             return state;
     }

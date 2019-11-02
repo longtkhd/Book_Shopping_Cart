@@ -1,11 +1,19 @@
 import React from 'react';
 import { connect} from 'react-redux';
+import {increment } from '../../src/actions/cartAction'
+import { decrement } from '../../src/actions/cartAction'
 
 
 class Cart extends React.Component {
-    
+        handleIncrement = (id) => {
+            this.props.increment(id);//creator action here
+        }
+        handleDecrement = (id) => {
+            this.props.decrement(id);
+        }
 
     render() {
+        
         let addedItems = this.props.items.map(item => {
             return (
                 //  <div className="card mt-4" style={{ width: '18rem' }} key={item.id}>
@@ -26,30 +34,43 @@ class Cart extends React.Component {
                 //  </div>
 
 
-                <div className="row">
+                <div className="row ">
                     <div className="col-xs-3 img-thumnail-custom">
                         <p className="image">
                             <img src={item.img} alt={item.desc}/>
                         </p>
                     </div>
+                    
                     <div className="col-right">
                         <div className="box-info-product"><h3>{item.title}</h3></div>
                         <div className="">{item.desc}</div>
-                        <div className="author">Cung cấp bởi <a href="#">{item.author}</a></div>                 
+                        <div className="author">Cung cấp bởi <a href="abc.com">{item.author}</a></div>                 
                     </div>
-                    <div className="box-pr pl-5">{item.price * item.quantity} $</div>                                    
-                </div>          
+                    <div className="box-pr pl-5">{item.price * item.quantity} $</div>  
+                    
+                            <div className="counter ml-5">
+                        <button onClick={() => { this.handleDecrement(item.id) }} className="btn btn-primary" type="submit">-</button>
+                        <button type="button" className="btn btn-light">{item.quantity}</button>
+                    
+                        <button onClick={() => { this.handleIncrement(item.id)}}className="btn btn-primary" type="submit">+</button>
+                            </div>
+                        
+                    </div>                           
+                
+
                 )  })
 
 
 
         return (
-            <div className="container mt-5">
+          
+            <div className="container mt-5 border border-primary ">
                 <h3 className="center " >Your Oders</h3>
-                <div className="box">
+                <div className="box ">
                     {addedItems }
                 </div>
             </div>
+            
        );
     }
 }
@@ -59,5 +80,12 @@ class Cart extends React.Component {
         total : state.total
     }
 }
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        increment: (id) => { dispatch(increment(id)) },
+        decrement : (id) => {dispatch(decrement(id))}
+    }
+}
 
-export default connect(mapStateToProps)(Cart);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

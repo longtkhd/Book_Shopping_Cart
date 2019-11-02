@@ -5,3 +5,16 @@ export const addToCart = (id) => {
         id
     }
 }
+export const increment = (id) => {
+    return {
+        type: ADD_QUANTITY,
+        id
+    }
+}
+export const decrement = (id) => {
+    return {
+        type: SUB_QUANTITY,
+        id
+    }
+
+}

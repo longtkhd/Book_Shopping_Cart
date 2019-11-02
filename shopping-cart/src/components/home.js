@@ -6,6 +6,7 @@ import { addToCart} from '../actions/cartAction'
 class Home extends React.Component {
     handleClick = (id) => {
         this.props.addToCart(id);
+        
     }
     render() {
         let itemList = this.props.items.map(item => {
@@ -27,11 +28,9 @@ class Home extends React.Component {
                     <div className="card-body">
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.author}</p>
-                        <p><b>Price: {item.price}$</b></p>
-                       
-                      
+                        <p><b>Price: {item.price}$</b></p>                     
                     </div>
-                    <button onClick={() => this.handleClick(item.id)} type="button" class="btn btn-danger"> <i class="fa fa-shopping-cart fa-2x">    </i> ADD ITEMS</button>
+                    <button onClick={() => this.handleClick(item.id)} type="button" className="btn btn-danger"> <i class="fa fa-shopping-cart fa-2x">    </i> ADD ITEMS</button>
 
                 </div>
             )
