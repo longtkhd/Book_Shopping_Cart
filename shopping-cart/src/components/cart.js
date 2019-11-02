@@ -53,25 +53,36 @@ class Cart extends React.Component {
                         <button type="button" className="btn btn-light">{item.quantity}</button>
                     
                         <button onClick={() => { this.handleIncrement(item.id)}}className="btn btn-primary" type="submit">+</button>
-                            </div>
+                            </div>                  
                         
-                    </div>                           
+                    </div>                                           
                 
 
                 )  })
 
 
 
-        return (
-          
-            <div className="container mt-5 border border-primary ">
+        return (    
+            <div className="ml-5  mt-5">
+                <div className="row ">
+            <div className=" mt-5 border border-primary col-8  ">
                 <h3 className="center " >Your Oders</h3>
                 <div className="box ">
                     {addedItems }
                 </div>
+                  
+                
             </div>
-            
-       );
+                    <div className="total col-3 mt-5  ml-2 sticky-top">
+                <div className="total_price">
+                        <p className="center ">Total:{this.props.total} $</p>
+                            <button  type="button" className="btn btn-danger"> <i class="fa fa-shopping-cart fa-2x">    </i> BUY ITEMS</button>
+
+                </div>
+            </div>
+            </div> 
+            </div>   
+                );
     }
 }
  const mapStateToProps = (state, ownProps) => {
